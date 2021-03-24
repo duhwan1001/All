@@ -26,7 +26,6 @@ public class T09_ThreadDaemonTest {
 
 /**
  * 자동 저장하는 스레드 클래스(3초에 한번씩 저장하기)
- *
  */
 class AutoSaveThread extends Thread {
 	public void save() {
