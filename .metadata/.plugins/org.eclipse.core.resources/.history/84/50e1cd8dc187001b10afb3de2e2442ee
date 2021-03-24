@@ -1,0 +1,25 @@
+package kr.or.ddit.basic;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
+public class T04_ByteArrayIOTest {
+	public static void main(String[] args) {
+		
+		byte[] inSrc = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		byte[] outSrc = null;
+		
+		byte[] temp = new byte[4]; // 자료를 읽을 때 사용할 배열
+		
+		ByteArrayInputStream bais = new ByteArrayInputStream(inSrc);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		
+		try {
+			// available() => 읽어올 수 있는 byte수를 반환
+			while(bais.available() > 0) {
+				bais.read(temp);
+				baos.write(temp);
+			}
+		}
+	}
+}

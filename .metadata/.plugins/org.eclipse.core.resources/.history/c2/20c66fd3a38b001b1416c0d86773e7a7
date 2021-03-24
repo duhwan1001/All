@@ -1,0 +1,14 @@
+package kr.or.ddit.basic;
+
+import javax.swing.JOptionPane;
+
+/**
+ * 멀티스레드를 활용한 카운트다운 처리	
+ * @author PC-21
+ *
+ */
+public class T06_ThreadTest {
+	public void run() {
+		String str = JOptionPane.showInputDialog("아무거나 입력하세요.");
+	}
+}

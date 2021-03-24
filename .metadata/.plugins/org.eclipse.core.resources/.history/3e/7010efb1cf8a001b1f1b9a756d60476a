@@ -1,0 +1,12 @@
+package self;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class copypaste {
+	public static void main(String[] args) throws FileNotFoundException {
+		FileInputStream fis =
+				new FileInputStream("d:/D_Other/Tulips.jpg");
+	}
+}

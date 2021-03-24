@@ -1,0 +1,10 @@
+package kr.or.ddit.basic;
+
+/**
+ * 프린터 기능 제공 보조 스트림
+ * @author PC-21
+ *
+ */
+public class T14_PrintStreamTest {
+
+}

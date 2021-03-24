@@ -1,0 +1,39 @@
+package kr.or.ddit.basic;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class T16_NonSerializableParentTest {
+	/**
+	 * 부모 클래스가 Serializable 인터페이스를 구현하고 있지 않을 경우 \
+	 * 부모 객체간 필드값 처리 방법
+	 * 
+	 * 	1. 부모 클래스가 Serializeable 인터페이스를 구현하도록 해야하나.
+	 * 	2. 자식 클래스에 writeObject()와 readObject()메서드를 이용하여
+	 * 	      부모객체의 필드값을 처리할 수 있도록 직접 구현한다.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		FileOutputStream fos = 
+				new FileOutputStream("d:/D_Other/nonSerializeableTest.bin");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		Child child = new Child();
+	}
+}
+
+/**
+ * 
+ * 
+ */
+
+class Parent {
+	 
+private String parentName;
+
+class Child extends Parent implements Serializable{
+	
+	private String childName;
+}
+}

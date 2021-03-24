@@ -1,0 +1,7 @@
+package kr.or.ddit.basic;
+
+public class T06_FileStreamTest {
+	public static void main(String[] args) {
+		// 파일에 출력하기
+	}
+}

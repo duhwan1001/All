@@ -1,0 +1,13 @@
+package kr.or.ddit.basic;
+
+/**
+ * 문자 변환 보조 스트림 예제
+ * @author PC-21
+ */
+public class T09_FileEncodingTest {
+/**
+ * 		InputStreamReader 객체는 파일의 인코딩 방식을 지정할 수 있다.
+ * 형식) new InputStreamReader(바이트기반스트림객체, 인코딩 방식)
+ */
+}
+

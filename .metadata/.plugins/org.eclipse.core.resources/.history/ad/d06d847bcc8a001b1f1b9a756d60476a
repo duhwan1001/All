@@ -1,0 +1,10 @@
+package self;
+
+import java.io.FileInputStream;
+
+public class copypaste {
+	public static void main(String[] args) {
+		FileInputStream fis =
+				new FileInputStream("d:/D_Other/Tulips.jpg")
+	}
+}

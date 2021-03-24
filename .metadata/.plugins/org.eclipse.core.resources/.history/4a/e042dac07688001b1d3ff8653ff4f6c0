@@ -1,0 +1,12 @@
+package kr.or.ddit.basic;
+
+/**
+ * FileWriter(문자기반 스트림) 예제
+ * @author PC-21
+ *
+ */
+public class T07_FileWriterTest {
+	public static void main(String[] args) {
+		
+	}
+}
