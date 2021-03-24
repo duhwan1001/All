@@ -1,8 +1,0 @@
-package kr.or.ddit.basic;
-
-public class T09_FileEncodingTest {
-	/**
-	 * 문자 변환 보조 스트림 예제
-	 * @author PC-21
-	 */
-}
