@@ -24,6 +24,6 @@ public class copyNpaste {
 		} finally {
 			fis.close();
 			fos.close();
-		} 
+		}
 	}
 }	
