@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 2 elements to &apos;iBatisTest/res&apos;&#x0D;&#x0A;- Original project: &apos;JDBCTest&apos;&#x0D;&#x0A;- Destination element: &apos;iBatisTest/res&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     log4j.xml&#x0D;&#x0A;     log4j.properties" description="Copy files" destination="=iBatisTest/res" element1="res/log4j.xml" element2="res/log4j.properties" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1615961608600" units="0" version="1.0"/>
-</session>
