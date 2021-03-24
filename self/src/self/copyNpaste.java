@@ -23,7 +23,7 @@ public class copyNpaste {
 			ex.printStackTrace();
 		} finally {
 			fis.close();
-			fos.close();
+			fos.close(); 
 		}
 	}
 }	
