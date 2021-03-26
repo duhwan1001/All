@@ -28,14 +28,6 @@ class Horse extends Thread implements Comparable<Horse> {
 	
 	private String name;
 	int rank;
-	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public Horse(String name) {
 		this.name = name;
