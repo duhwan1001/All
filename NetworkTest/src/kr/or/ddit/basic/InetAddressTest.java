@@ -9,7 +9,7 @@ public class InetAddressTest {
 		
 		// naver사이트의 ip정보 가져오기
 		InetAddress naverIp =
-				InetAddress.getByName("www.naver.com");
+				InetAddress.getByName("www.google.com");
 		// machin name 또는 텍스트 형식의 ip주소 반환
 		System.out.println("Host Name => " + naverIp.getHostName());
 		System.out.println("Host Address => " + naverIp.getHostAddress());
@@ -23,7 +23,7 @@ public class InetAddressTest {
 		
 		// ip주소가 여러개인 호스트의 정보 가져오기
 		InetAddress[] naverIps =
-				InetAddress.getAllByName("www.naver.com");
+				InetAddress.getAllByName("www.naver.com"); // 배열로 던져준다.
 		for(InetAddress nIp : naverIps) {
 			System.out.println(nIp.toString());
 		}
