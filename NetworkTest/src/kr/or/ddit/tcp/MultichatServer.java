@@ -29,7 +29,7 @@ public class MultichatServer {
 				= new ServerSocket(7777)){ // close를 자동으로 해준다 - try with resources
 			System.out.println("서버가 시작되었습니다");
 			
-			while(true) { // 다수가 접속하기 때문에 무한으로 돌려준다.
+			while(true) { // 다수가 접속하기 때문에 무한으로 돌	려준다.
 				// 클라이언트의 접속을 대기한다.
 				socket = serverSocket.accept();
 				
@@ -140,7 +140,12 @@ public class MultichatServer {
 		}
 		
 	}
+	
+	public static void main(String[] args) {
+		new MultichatServer().startServer();
+	}
 }
+
 
 
 
