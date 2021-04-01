@@ -11,7 +11,7 @@ public class MultichatClient {
 	Scanner scan = new Scanner(System.in);
 	private String nickName; // 대화명
 	
-	public  void startClient() {
+	public void startClient() {
 		// 대화명 입력받기
 		System.out.println("대화명 >> ");
 		nickName = scan.next();
@@ -20,8 +20,7 @@ public class MultichatClient {
 		
 		try {
 			
-			socket = new Socket("192.168.43.132", 7777);
-			
+			socket = new Socket("192.168.43.60", 7777);
 			System.out.println("서버에 연결되었습니다.");
 			
 			// 송신용 스레드 생성
@@ -34,7 +33,6 @@ public class MultichatClient {
 			
 			sender.start();
 			receiver.start();
-			
 			
 		} catch (IOException ex) {
 			ex.printStackTrace();
@@ -96,7 +94,7 @@ public class MultichatClient {
 		public void run() {
 			while(dis != null) {
 				try {
-					// 서버로부터 수신하 메시지 출력하기
+					// 서버로부터 수신하고 메시지 출력하기
 					System.out.println(dis.readUTF());
 				} catch (IOException ex) {
 					ex.printStackTrace();
