@@ -3,7 +3,7 @@
   <display-name>ServletTest</display-name>
   <servlet>
   	<servlet-name>T01_ServletLifeCycle</servlet-name>
-	<servlet-class>kr.or.ddit.basic.T01_ServletLIfeCycle</servlet-class>
+	<servlet-class>kr.or.ddit.basic.T01_ServletLifeCycle</servlet-class>
   </servlet>
   
   <servlet-mapping>
