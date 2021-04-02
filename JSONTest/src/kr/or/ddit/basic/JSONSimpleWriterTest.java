@@ -41,7 +41,7 @@ public class JSONSimpleWriterTest {
 		
 		jsonObj.put("singerList", singerList);
 		
-		FileWriter fw = new FileWriter("d:/D_Other/myJsonFile.json");
+		FileWriter fw = new FileWriter("d:/D_Other/myJsonFile.txt");
 		fw.write(jsonObj.toString());
 		fw.flush();
 		fw.close();
