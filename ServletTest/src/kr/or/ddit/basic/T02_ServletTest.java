@@ -26,7 +26,7 @@ public class T02_ServletTest extends HttpServlet{
 	 * 6. 컨테이너로부터 서블릿이 제거되는 경우에 destroy() 메서드가 호출된다. 
 	 */
 	@Override
-	
+		//웹에서 폰트가 깨지지 않기 위해 server.xml 65번째 열에 URIEncoding="UTF-8" 추가함
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Post방식으로 넘어오는 Body데이터를 인코딩처리함. get방식은 톰캣의 URIEncoding 설정을 이용함
 		// 반드시 request에서 값을 가져오기 전에 먼저 설정해야 적용됨.
@@ -41,7 +41,7 @@ public class T02_ServletTest extends HttpServlet{
 		resp.setCharacterEncoding("UTF-8");
 		
 		// 응답 메시지의 컨텐트 타입 설정
-		resp.setContentType("text/plain");
+		resp.setContentType("text/plain"); // MIME
 		
 		// 실제 수행할 로직(기능)이 시작되는 부분
 		PrintWriter out = resp.getWriter();
@@ -53,7 +53,7 @@ public class T02_ServletTest extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
+		doPost(req, resp);
 	}
 	
 }
