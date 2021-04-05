@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>ServletTest</display-name>
+  
+  <!-- T01 -->
   <servlet>
   	<servlet-name>T01_ServletLifeCycle</servlet-name>
 	<servlet-class>kr.or.ddit.basic.T01_ServletLifeCycle</servlet-class>
+	<load-on-startup>1</load-on-startup> <!-- 톰캣 컨테이너가 실행되면서 미리 서블릿을 실행 -->
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>T01_ServletLifeCycle</servlet-name>
   	<url-pattern>/T01_ServletLifeCycle</url-pattern>
   </servlet-mapping>
+  
+  <!-- T02 -->
+  <servlet>
+  	<servlet-name>T02_ServletTest</servlet-name>
+  	<servlet-class>kr.or.ddit.basic.T02_ServletTest</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>T02_ServletTest</servlet-name>
+  	<url-pattern>/T02_ServletTest</url-pattern>
+  </servlet-mapping>
+  
+  <!-- T03 -->
+  <servlet>
+  	<servlet-name>T03_ServletParameterTest</servlet-name>
+  	<servlet-class>kr.or.ddit.basic.T03_ServletParameterTest</servlet-class>
+  	
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>T03_ServletParameterTest</servlet-name>
+  	<url-pattern>/T03_ServletParameterTest.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- T04 // 에러 페이지 -->
+  
+  <servlet>
+  	<servlet-name>ErrorHandler</servlet-name>
+  	<servlet-class>kr.or.ddit.basic.T04_ErrorHandler</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ErrorHandler</servlet-name>
+  	<url-pattern>/ErrorHandler</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 에러가 발생하면 /ErrorHandler 페이지로 넘기는 기능을 구현한 쿼리 -->
+  <error-page>
+  	<exception-type>javax.servlet.ServletException</exception-type>
+  	<location>/ErrorHandler</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/ErrorHandler</location>
+  </error-page>
+  
 </web-app>
+
