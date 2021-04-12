@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>�ű�ȸ�� ���</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>신구회원 등록</title>
 </head>
 <body>
 	<form action="insert.do" method="post">
@@ -14,19 +14,19 @@
 				<td><input type="text" name="memId" value=""></td>
 			</tr>
 			<tr>
-				<td>�̸�:</td>
+				<td>이름:</td>
 				<td><input type="text" name="memName" value=""></td>
 			</tr>
 			<tr>
-					<td>��ȭ��ȣ:</td>
+					<td>전화번호:</td>
 				<td><input type="text" name="memTel" value=""></td>
 			</tr>
 			<tr>
-				<td>�� ��:</td>
+				<td>주 소:</td>
 				<td><textarea rows="5" col="6" name="memAddr" value=""></textarea></td>
 			</tr>
 	</table>
-	<button type="submit" value="ȸ�����">ȸ�� ���</a></button>		
+	<button type="submit" value="회원등록">회원 등록</a></button>		
 	</form>
 
 </body>

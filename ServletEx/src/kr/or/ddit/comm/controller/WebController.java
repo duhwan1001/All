@@ -24,7 +24,7 @@ import kr.or.ddit.comm.handler.NullHandler;
  */
 public class WebController extends HttpServlet {
 	
-	private static Logger LOGGER = Logger.getLogger(WebController.class);
+	private static Logger LOGGER = Logger.getLogger(WebController.class); // log4j
 	
 	// 매핑정보 저장(핸들러 객체 저장용 맵)
 	private Map<String, CommandHandler> cmmHandlerMap
@@ -79,8 +79,6 @@ public class WebController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		process(req, resp);
-		
-	
 	}
 	
 	/**
