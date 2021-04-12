@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.ibatis.sqlmap.client.SqlMapClient;
+
 import kr.or.ddit.member.vo.MemberVO;
 
 /**
@@ -54,5 +56,13 @@ public interface IMemberService {
 	 * @return 검색된 결과를 담은 List
 	 */
 	public List<MemberVO> getSearchMember(MemberVO mv);
+
+	/**
+	 * 주어진 회원ID에 해당하는 회원정보를 조회하는 메서드
+	 * @param memId 검색할 회원 ID
+	 * @return 검색한 회원ID에 해당하는 회원정보 
+	 * @throws SQLException 
+	 */
+	public MemberVO getMember(String memId);
 	
 }

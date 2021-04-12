@@ -61,8 +61,6 @@ public class InsertMemberServlet extends HttpServlet {
 			//					+ URLEncoder.encode(msg, "UTF-8")).forward(req, resp);
 			// 계속 요청함
 		
-		
-		
 	}
 	
 }

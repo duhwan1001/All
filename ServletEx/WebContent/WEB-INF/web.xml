@@ -4,6 +4,20 @@
 
 
 	<servlet>
+		<servlet-name>WebController</servlet-name>
+		<servlet-class>kr.or.ddit.comm.controller.WebController</servlet-class>
+		<init-param>
+			<param-name>handler-config</param-name>
+			<param-value>/WEB-INF/handler.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<!--<servlet>
 		<servlet-name>SelectMemberAllServlet</servlet-name>
 		<servlet-class>kr.or.ddit.member.controller.SelectMemberAllServlet</servlet-class>
 	</servlet>
@@ -29,4 +43,5 @@
 		<servlet-name>InsertMemberServlet</servlet-name>
 		<url-pattern>/member/insert.do</url-pattern>
 	</servlet-mapping>
+	 -->
 </web-app>
