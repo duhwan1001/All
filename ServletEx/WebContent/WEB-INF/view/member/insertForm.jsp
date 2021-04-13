@@ -7,7 +7,7 @@
 <title>신구회원 등록</title>
 </head>
 <body>
-	<form action="insert.do" method="post">
+	<form action="insert.do" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>I D:</td>
@@ -25,7 +25,11 @@
 				<td>주 소:</td>
 				<td><textarea rows="5" col="6" name="memAddr" value=""></textarea></td>
 			</tr>
-	</table>
+			<tr>
+				<td>첨부파일</td>
+				<td><input type="file" name="atchFile"></td>
+			</tr>
+		</table>
 	<button type="submit" value="회원등록">회원 등록</a></button>		
 	</form>
 
