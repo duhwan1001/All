@@ -1,14 +1,21 @@
 package kr.or.ddit.member.handler;
 
 import java.net.URLEncoder;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+
 import kr.or.ddit.comm.handler.CommandHandler;
+import kr.or.ddit.comm.service.AtchfileServiceImpl;
+import kr.or.ddit.comm.service.IAtchFileService;
 import kr.or.ddit.member.service.IMemberService;
 import kr.or.ddit.member.service.MemberServiceImpl;
+import kr.or.ddit.member.vo.AtchFileVO;
 import kr.or.ddit.member.vo.MemberVO;
+import kr.or.ddit.util.FileUploadRequestWrapper;
 
 public class UpdateMemberHandler implements CommandHandler {
 
@@ -30,10 +37,23 @@ public class UpdateMemberHandler implements CommandHandler {
 			
 			String memId = req.getParameter("memId");
 			
+			
+			
 			// 1-1 회원정보 조회
 			IMemberService service = 
 					MemberServiceImpl.getInstance();
 			MemberVO mv = service.getMember(memId);
+			
+			if(mv.getAtchFileId() > 0) { // 첨부파일이 존재하면
+				// 첨부파일 정보 조회
+				AtchFileVO fileVO = new AtchFileVO();
+				fileVO.setAtchFileId(mv.getAtchFileId());
+				
+				IAtchFileService atchFileService = AtchfileServiceImpl.getInstance();
+				List<AtchFileVO> atchFileList = atchFileService.getAtchFileList(fileVO);
+				
+				req.setAttribute("atchFileList", atchFileList);
+			}
 			
 			// 2. 모델정보 등록
 			req.setAttribute("memVO", mv);
@@ -41,6 +61,23 @@ public class UpdateMemberHandler implements CommandHandler {
 			return VIEW_PAGE;
 			
 		}else { // POST 방식인 경우
+			
+			   // FileItem 추출
+	         FileItem item = ((FileUploadRequestWrapper)req).getFileItem("atchFile");
+	         
+	         AtchFileVO atchFileVO = new AtchFileVO();
+	         
+	         // 기존의 첨부파일아이디 정보 가져오기
+	         atchFileVO.setAtchFileId(req.getParameter("atchFile")==null ?
+	         -1 : Long.parseLong(req.getParameter("atchFile")));
+	         
+	         if(item != null && !item.getName().equals("")) { // 기존 파일과 겹치지만 않는다면
+	            
+	            IAtchFileService fileService = AtchfileServiceImpl.getInstance();
+	            
+	            
+	            atchFileVO = fileService.saveAtchFile(item); // 첨부파일 저장 
+	         }
 			
 			// 1. 요청파라미터 정보 가져오기
 			String memId = req.getParameter("memId");
@@ -57,6 +94,8 @@ public class UpdateMemberHandler implements CommandHandler {
 			mv.setMemName(memName);
 			mv.setMemTel(memTel);
 			mv.setMemAddr(memAddr);
+			mv.setAtchFileId(atchFileVO.getAtchFileId());
+			
 			
 			int cnt = memberService.updateMember(mv);
 			

@@ -72,7 +72,7 @@ public class AtchfileServiceImpl implements IAtchFileService{
 		atchFileVO.setStreFileNm(storeFileName);
 		atchFileVO.setFileSize(fileSize);
 		atchFileVO.setOrignlFileNm(orignFileName);
-		atchFileVO.setFileStreCour(filePath);
+		atchFileVO.setFileStreCours(filePath);
 		atchFileVO.setFileExtsn(fileExtension);
 		
 		// 파일 세부정보 저장

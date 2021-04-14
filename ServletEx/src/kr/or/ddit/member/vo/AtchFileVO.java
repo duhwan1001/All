@@ -7,7 +7,7 @@ public class AtchFileVO {
 	private long atchFileId = -1;
 	private Date createDt;
 	private long fileSn = -1;
-	private String fileStreCour;
+	private String fileStreCours;
 	private String streFileNm;
 	private String orignlFileNm;
 	private String fileExtsn;
@@ -31,12 +31,6 @@ public class AtchFileVO {
 	}
 	public void setFileSn(long fileSn) {
 		this.fileSn = fileSn;
-	}
-	public String getFileStreCour() {
-		return fileStreCour;
-	}
-	public void setFileStreCour(String fileStreCour) {
-		this.fileStreCour = fileStreCour;
 	}
 	public String getStreFileNm() {
 		return streFileNm;
@@ -67,6 +61,12 @@ public class AtchFileVO {
 	}
 	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
+	}
+	public String getFileStreCours() {
+		return fileStreCours;
+	}
+	public void setFileStreCours(String fileStreCours) {
+		this.fileStreCours = fileStreCours;
 	}
 
 		

@@ -1,11 +1,16 @@
 package kr.or.ddit.member.handler;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.ddit.comm.handler.CommandHandler;
+import kr.or.ddit.comm.service.AtchfileServiceImpl;
+import kr.or.ddit.comm.service.IAtchFileService;
 import kr.or.ddit.member.service.IMemberService;
 import kr.or.ddit.member.service.MemberServiceImpl;
+import kr.or.ddit.member.vo.AtchFileVO;
 import kr.or.ddit.member.vo.MemberVO;
 
 public class ViewMemberHandler implements CommandHandler{
@@ -23,10 +28,22 @@ public class ViewMemberHandler implements CommandHandler{
 		
 		String memId = req.getParameter("memId");
 		
+		
 		// 회원정보 조회
 		IMemberService memberService =
 				MemberServiceImpl.getInstance();
 		MemberVO mv = memberService.getMember(memId);
+		
+		if(mv.getAtchFileId() > 0) { // 첨부파일이 존재하면
+			// 첨부파일 정보 조회
+			AtchFileVO fileVO = new AtchFileVO();
+			fileVO.setAtchFileId(mv.getAtchFileId());
+			
+			IAtchFileService atchFileService = AtchfileServiceImpl.getInstance();
+			List<AtchFileVO> atchFileList = atchFileService.getAtchFileList(fileVO);
+			
+			req.setAttribute("atchFileList", atchFileList);
+		}
 		
 		req.setAttribute("memVO", mv);
 		
